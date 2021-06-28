@@ -1,5 +1,13 @@
 body,html,div,header,main{
     display: flex;
     flex-direction: column;
-    flex:1;
+}
+.Colonne{
+    flex-direction: column;
+}
+.Ligne{
+    flex-direction: row;
+}
+.Centre{
+    text-align: center;
 }

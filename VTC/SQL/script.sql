@@ -30,6 +30,14 @@ CREATE TABLE IF NOT EXISTS reservation(
   idUser int() NOT NULL
 ) ENGINE = InnoDB;
 
+DROP TABLE IF EXISTS commentaire;
+
+CREATE TABLE IF NOT EXISTS commentaire(
+  idCommentaire int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  idUser int (11) NOT NULL,
+  commentaire varchar(250) NOT NULL
+) ENGINE = InnoDB;
+
 
 INSERT INTO roles VALUES (null,'Administrateur');
 INSERT INTO roles VALUES (null,'Utilisateur');

@@ -4,7 +4,7 @@ class reservationManager
     public static function add(reservation $objet)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO reservation(idReservation,dateReservation,adresseDepart,destination,idUser) VALUES (:idReservation,:dateReservation,:adresseDepart,:destination,:idUser)");
+        $q = $db->prepare("INSERT INTO reservation (idReservation,dateReservation,adresseDepart,destination,idUser) VALUES (:idReservation,:dateReservation,:adresseDepart,:destination,:idUser)");
         $q->bindValue(":idReservation", $objet->getIdReservation());
         $q->bindValue(":dateReservation", $objet->getDateReservation());
         $q->bindValue(":adresseDepart", $objet->getAdresseDepart());
