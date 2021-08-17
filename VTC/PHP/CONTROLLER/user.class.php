@@ -3,6 +3,8 @@
 	 private $_idUser;
 	 private $_nomUser;
 	 private $_prenomUser;
+     private $_mailUser;
+     private $_telUser;
 	 private $_mdpUser;
 	 private $_idRole;
 /*****************Accesseurs***************** */
@@ -35,6 +37,18 @@ public function getIdRole(){
 }
 public function setIdRole($idRole){
 	$this->_idRole = $idRole;
+}
+public function getMailUser(){
+	return $this->_mailUser;
+}
+public function setMailUser($mailUser){
+	$this->_mailUser = $mailUser;
+}
+public function getTelUser(){
+	return $this->_telUser;
+}
+public function setTelUser($telUser){
+	$this->_telUser = $telUser;
 }
 /*****************Constructeur******************/ 
 public function __construct(array $options = [])

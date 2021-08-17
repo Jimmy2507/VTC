@@ -4,10 +4,12 @@ class userManager
     public static function add(user $objet)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO user(idUser,nomUser,prenomUser,mdpUser,idRole) VALUES (:idUser,:nomUser,:prenomUser,:mdpUser,:idRole)");
+        $q = $db->prepare("INSERT INTO user(idUser,nomUser,prenomUser,mailUser,telUser,mdpUser,idRole) VALUES (:idUser,:nomUser,:prenomUser,:mailUser,:telUser,:mdpUser,:idRole)");
         $q->bindValue(":idUser", $objet->getIdUser());
         $q->bindValue(":nomUser", $objet->getNomUser());
         $q->bindValue(":prenomUser", $objet->getPrenomUser());
+        $q->bindValue(":mailUser", $objet->getMailUser());
+        $q->bindValue(":telUser", $objet->getTelUser());
         $q->bindValue(":mdpUser", $objet->getMdpUser());
         $q->bindValue(":idRole", $objet->getIdRole());
         $q->execute();
@@ -20,6 +22,7 @@ class userManager
         $q->bindValue(":idUser", $objet->getIdUser());
         $q->bindValue(":nomUser", $objet->getNomUser());
         $q->bindValue(":prenomUser", $objet->getPrenomUser());
+        $q->bindValue(":mailUser", $objet->getMailUser());
         $q->bindValue(":mdpUser", $objet->getMdpUser());
         $q->bindValue(":idRole", $objet->getIdRole());
         $q->execute();
@@ -43,6 +46,23 @@ class userManager
             return false;
         }
     }
+    public static function findByMail($mailUser){
+        $db = DbConnect::getDb();
+        if (!strstr($mailUser,";")){
+            $requete = $db->query("SELECT * FROM user WHERE mailUser ='".$mailUser."'");
+            $resultats = $requete->fetch(PDO::FETCH_ASSOC);
+            if ($resultats != false){
+                return new User($resultats);
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
     public static function getList()
     {
         $db = DbConnect::getDb();

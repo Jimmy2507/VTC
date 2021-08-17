@@ -4,8 +4,8 @@ function chargerClasse($classe){
     if (file_exists("PHP/CONTROLLER/" . $classe . ".class.php")){
         require "PHP/CONTROLLER/" . $classe . ".class.php";
     }
-    if (file_exists("PHP/MODELE/" . $classe . ".class.php")){
-        require "PHP/MODELE/" . $classe . ".class.php";
+    if (file_exists("PHP/MODEL/" . $classe . ".class.php")){
+        require "PHP/MODEL/" . $classe . ".class.php";
     }
 }
 spl_autoload_register("ChargerClasse");
@@ -23,4 +23,4 @@ function chargerPage($tab){
 
 function crypter($mdp){
     return md5(md5($mdp).strlen($mdp));
-}    
+}
