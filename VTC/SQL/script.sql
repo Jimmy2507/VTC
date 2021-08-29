@@ -28,7 +28,9 @@ CREATE TABLE IF NOT EXISTS reservation(
   dateReservation varchar (50) NOT NULL,
   adresseDepart varchar(150)NOT NULL,
   destination varchar(150)NOT NULL,
-  idUser int(11) NOT NULL
+  idUser int(11) NOT NULL,
+  idChauffeur int (11) NOT NULL,
+  Terminer boolean NOT NULL
 ) ENGINE = InnoDB;
 
 DROP TABLE IF EXISTS commentaire;
@@ -36,7 +38,16 @@ DROP TABLE IF EXISTS commentaire;
 CREATE TABLE IF NOT EXISTS commentaire(
   idCommentaire int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   idUser int (11) NOT NULL,
-  commentaire varchar(250) NOT NULL
+  titreCommentaire varchar(150) NOT NULL,
+  commentaire varchar(250) NOT NULL,
+  dateCommentaire varchar(10) NOT NULL
+) ENGINE = InnoDB;
+
+DROP TABLE IF EXISTS Tarif;
+
+CREATE TABLE IF NOT EXISTS Tarif(
+  idTarif int (11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Tarif float(11) NOT NULL
 ) ENGINE = InnoDB;
 
 
@@ -45,3 +56,5 @@ ALTER TABLE commentaire ADD CONSTRAINT user FOREIGN KEY (idUser) REFERENCES user
 
 INSERT INTO roles VALUES (null,'Administrateur');
 INSERT INTO roles VALUES (null,'Utilisateur');
+INSERT INTO roles VALUES (null,'Salarie');
+INSERT INTO roles VALUES (null,'SousTraitant');

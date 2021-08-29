@@ -1,54 +1,19 @@
-<?php class reservation { 
+<?php class tarif { 
 /*****************Attributs***************** */
-	 private $_idReservation;
-	 private $_dateReservation;
-	 private $_adresseDepart;
-	 private $_destination;
-	 private $_idUser;
-     private $_idChauffeur;
-     private $_terminer;
+	 private $_idTarif;
+	 private $_tarif;
 /*****************Accesseurs***************** */
-public function getIdReservation(){
-	return $this->_idReservation;
+public function getIdTarif(){
+	return $this->_idTarif;
 }
-public function setIdReservation($idReservation){
-	$this->_idReservation = $idReservation;
+public function setIdTarif($idTarif){
+	$this->_idTarif = $idTarif;
 }
-public function getDateReservation(){
-	return $this->_dateReservation;
+public function getTarif(){
+	return $this->_tarif;
 }
-public function setDateReservation($dateReservation){
-	$this->_dateReservation = $dateReservation;
-}
-public function getAdresseDepart(){
-	return $this->_adresseDepart;
-}
-public function setAdresseDepart($adresseDepart){
-	$this->_adresseDepart = $adresseDepart;
-}
-public function getDestination(){
-	return $this->_destination;
-}
-public function setDestination($destination){
-	$this->_destination = $destination;
-}
-public function getIdUser(){
-	return $this->_idUser;
-}
-public function setIdUser($idUser){
-	$this->_idUser = $idUser;
-}
-public function getIdChauffeur(){
-	return $this->_idChauffeur;
-}
-public function setIdChauffeur($idChauffeur){
-	$this->_idChauffeur = $idChauffeur;
-}
-public function getTerminer(){
-	return $this->_terminer;
-}
-public function setTerminer($Terminer){
-	$this->_terminer = $Terminer;
+public function setTarif($Tarif){
+	$this->_tarif = $Tarif;
 }
 /*****************Constructeur******************/ 
 public function __construct(array $options = [])

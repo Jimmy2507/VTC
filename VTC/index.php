@@ -7,15 +7,24 @@
     $mode=(isset($_GET['mode']))?$_GET['mode']:"";
     $routes=[
             'default'=>['PHP/VIEW/','Accueil','Accueil'],
-            'PageConnexion'=>['PHP/VIEW/','PageUser','Page Connexion'],
+            'Profil'=>['PHP/VIEW/','Profil','Profil'],
+            'PaiementReservation'=>['PHP/VIEW/','PaiementReservation','Paiement de la reservation'],
+            'GestionAdmin'=>['PHP/VIEW/','GestionAdmin','Gestion Administrateur'],
             //Listes
-
+            'ListeReservation'=>['PHP/VIEW/','ListeReservation','AMVTC/Reservation En Attente'],
+            'ListeHistorique'=>['PHP/VIEW/','ListeHistoriqueReservation','Historique De Vos Reservations'],
             //Formulaires
             'FormConnexion'=>['PHP/VIEW/','FormConnexion','Connexion'],
             'FormInscription'=>['PHP/VIEW/','Forminscription','Connexion'],
+            'FormCompte'=>['PHP/VIEW/','FormCompte','informations personnelles'],
+            'FormGestionPrix'=>['PHP/VIEW/','FormGestionPrix','Gestion des prix'],
             //Action
             'ActionConnexion'=>['PHP/VIEW/','ActionConnexion',''],
             'ActionInscription'=>['PHP/VIEW/','ActionInscription',''],
+            'ActionDeconnexion'=>['PHP/VIEW/','ActionDeconnexion',''],
+            'ActionReservation'=>['PHP/VIEW/','ActionReservation',''],
+            'ActionPriseEnChargeReserv'=>['PHP/VIEW/','ActionPriseEnChargeReserv',''],
+            'ActionGestionPrix'=>['PHP/VIEW/','ActionGestionPrix',''],
 
     ];    
 

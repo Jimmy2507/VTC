@@ -4,8 +4,8 @@ if ($uti != false)
 {
     if (crypter($_POST['mdpUser']) == $uti->getMdpUser())
     {
-        $_SESSION['VTC_utilisateur']=$uti;
-        header("location:?page=PageConnexion");
+        $_SESSION['AMVTC_utilisateur']=$uti;
+        header("location:?page=default");
     }
     else
     {
